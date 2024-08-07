@@ -1,0 +1,3 @@
+"What is the capital of France?", ["London", "Paris", "Berlin", "Madrid"], 2
+"Who wrote 'Harry Potter' series?", ["J.R.R. Tolkien", "J.K. Rowling", "George R.R. Martin", "Stephen King"], 2
+"What is the largest planet in our solar system?", ["Earth", "Jupiter", "Mars", "Saturn"], 2
