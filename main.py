@@ -1,6 +1,9 @@
+# Simple command line quiz application using basic object oriented python.
+
 import ast
 
 
+# Represents a single quiz question with text, choices, and the correct answer index.
 class Question:
     def __init__(self, text, choices, answer):
         self.text = text
@@ -11,6 +14,7 @@ class Question:
         return user_answer == self.answer
 
 
+# Manages the quiz state, flow, questions, and final score.
 class Quiz:
     def __init__(self, questions):
         self.questions = questions
@@ -50,6 +54,7 @@ class Quiz:
         print(f"Score: {self.score}")
 
 
+# Reads questions from a text file where each line is parsed safely via literal eval.
 def load_questions_from_file(file_path):
     questions = []
     with open(file_path, "r", encoding="utf-8") as file:
