@@ -29,7 +29,7 @@ class Quiz:
         
         while True:
             try:
-                user_answer = int(input("Enter your choice (1 to 4): "))
+                user_answer = int(input(f"Enter your choice (1 to {len(current_question.choices)}): "))
                 if 1 <= user_answer <= len(current_question.choices):
                     break
                 print("Invalid choice range. Please try again.")
