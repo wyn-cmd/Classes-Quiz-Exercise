@@ -58,9 +58,13 @@ class Quiz:
 def load_questions_from_file(file_path):
     questions = []
     with open(file_path, "r", encoding="utf-8") as file:
-        for line in file:
+        for line_number, line in enumerate(file, start=1):
             if line.strip():
-                text, choices, answer = ast.literal_eval(line)
+                try:
+                    text, choices, answer = ast.literal_eval(line)
+                except (ValueError, SyntaxError):
+                    print(f"Skipping line {line_number}: could not parse a question.")
+                    continue
                 questions.append(Question(text, choices, answer))
     return questions
 
